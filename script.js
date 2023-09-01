@@ -6,8 +6,12 @@ var numOfTies = 0;
 var isGameActive = true;
 
 function playGame() {
-    var userInput = window.prompt('Enter r, p, or s for rock, papers and scissors.').toLowerCase()
+    var userInput;
+
+    while (!options.includes(userInput)) {
+        userInput = window.prompt('Enter r, p, or s for rock, papers and scissors.').toLowerCase()
     console.log(userInput)
+    } 
 
     var randomIndex = (Math.floor(Math.random() * options.length))  //How to generate a random number
     var computerInput = options[randomIndex]
@@ -34,8 +38,13 @@ function playGame() {
         window.alert('Tie! Lets try again')
      }
 
+     window.alert(`wins: ${numOfWins}\nLosses: ${numOfLosses}\nTies: ${numOfTies}`)
+     isGameActive = window.confirm('Do you want to play again?')
+
 }
 
-playGame();
+while(isGameActive === true) {
+    playGame()
+}
 
-// while(isGameActive === true) {
+window.alert('I knew you would quit!')
