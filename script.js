@@ -6,7 +6,7 @@ var numOfTies = 0;
 var isGameActive = true;
 
 function playGame() {
-    var userInput = window.prompt('Enter r, p, or s for rock, papers and scissors. *use lowercase letters only*')
+    var userInput = window.prompt('Enter r, p, or s for rock, papers and scissors.').toLowerCase()
     console.log(userInput)
 
     var randomIndex = (Math.floor(Math.random() * options.length))  //How to generate a random number
